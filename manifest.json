@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "Page Monitor V3",
+    "version": "1.0",
+    "description": "Surveille les changements de la page et affiche une notification si le contenu change.",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "scripting",
+      "notifications"
+    ],
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "128": "128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://app.foodles.co/*"],
+        "js": ["content.js"]
+      }
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "icons": {
+      "128": "128.png"
+    }
+  }
+  
